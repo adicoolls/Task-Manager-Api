@@ -5,10 +5,11 @@ const tasks = require('./routes/tasks');
 const conncetDB =  require('./db/connect');
 require('dotenv').config()
 //middleware = it act as an internmdiary between the user request and server's responce
-app.use(express.static('./public'))
+
 app.use(express.json());
 
 //routes
+app.use(express.static('public'))
 
 app.use('/api/v1/tasks', tasks);
 
